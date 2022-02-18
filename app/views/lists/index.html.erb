@@ -7,7 +7,7 @@
 <div class="col p-4 mt-2">
   <h1>All lists</h1>
   </div>
-  <div class="cards">
+  <div class="cards px-5">
     <% @lists.each do |list| %>
       <%= link_to list_path(list) do %>
         <div class="card my-4 mx-auto text-decoration-none" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? "#{cl_image_path(list.photo.key)}"  : image_path(list.movies.pluck(:poster_url).sample || image_path('default.jpg')) %>)">
