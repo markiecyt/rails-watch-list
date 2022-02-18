@@ -1,14 +1,14 @@
+<div class="container-fluid">
+  <div class="row banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.photo.attached? ? "#{cl_image_path(@list.photo.key)}"  : image_path(@list.movies.pluck(:poster_url).sample || image_path('default.jpg')) %>)">
+    <h1 class="text-center h-25"><%= @list.name %></h1>
+  </div>
+</div>
+
 <div class="container p-5">
-  <h1 class="text-center mt-5"><%= @list.name %></h1>
-    <div class="row p-2 gx-4">
-      <% @list.bookmarks.each do |bookmark|%>
-      <div class="col my-4 justify-content-center">
-        <div class="card shadow " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= bookmark.movie.poster_url %>)">
-          <h2><%= bookmark.movie.title %></h2>
-          <%= link_to 'Remove', bookmark_path(bookmark), method: :delete, data: { confirm: 'Confirm to remove from the list?' }, class: "text-decoration-none text-white" %>
-        </div>
-      </div>
-      <% end %>
-      </div>
+  <div class="row p-2 gx-4">
+    <% @list.bookmarks.each do |bookmark|%>
+      <%= render partial: "movies/card", locals: { bookmark: bookmark} %>
+    <% end %>
+  </div>
   <%= link_to 'Bookmark a movie', new_list_bookmark_path(@list), class: 'btn btn-info'  %>
 </div>

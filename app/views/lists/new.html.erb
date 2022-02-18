@@ -1,8 +1,0 @@
-<div class="container pt-5 mt-5">
-  <h1>Add new list</h1>
-  <%= simple_form_for [ @list] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Add list", class: "btn btn-primary" %>
-  <% end %>
-</div>

@@ -9,11 +9,7 @@
   </div>
   <div class="cards px-5">
     <% @lists.each do |list| %>
-      <%= link_to list_path(list) do %>
-        <div class="card my-4 mx-auto text-decoration-none" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? "#{cl_image_path(list.photo.key)}"  : image_path(list.movies.pluck(:poster_url).sample || image_path('default.jpg')) %>)">
-          <p class="card-link text-decoration-none"><%= list.name %></p>
-        </div>
-      <% end %>
+      <%= render partial: "card", locals: {list: list} %>
     <% end %>
   </div>
 </div>

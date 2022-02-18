@@ -29,6 +29,36 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+.movie-card {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  .remove-link {
+    display: flex;
+    justify-content: end;
+    color: white;
+    padding: 16px;
+  }
+  h2 {
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    color: lightgray;
+    span {
+      font-size: 14px;
+    }
+  }
+  p {
+    color: lightgray;
+  }
+}
+
+
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     grid-template-columns: 1fr;
