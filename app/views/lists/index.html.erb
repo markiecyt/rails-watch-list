@@ -5,7 +5,13 @@
 </div>
 
 <div class="col p-4 mt-2">
-  <h1>All lists</h1>
+  <h2>All Movies</h2>
+    <div class="movies-list p-3">
+      <% Movie.all.each do |movie| %>
+        <%= render partial: "movies/card", locals: { movie: movie } %>
+      <% end %>
+    </div>
+  <h2>All lists</h2>
   </div>
   <div class="cards px-5">
     <% @lists.each do |list| %>
