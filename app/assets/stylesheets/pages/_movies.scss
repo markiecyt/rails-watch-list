@@ -26,3 +26,14 @@ h2 {
     text-decoration: none;
   }
 }
+
+.movie-details {
+  position: static;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 768px) {
+  .movie-details {
+    position: fixed;
+  }
+}
