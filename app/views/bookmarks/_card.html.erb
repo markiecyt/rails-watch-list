@@ -2,7 +2,7 @@
   <img src="<%= bookmark.movie.poster_url %>"/>
   <div class="card-bookmark-body px-4 flex-grow-1 row justify-content-between">
     <div class="card-bookmark-infos col-8">
-      <h2><%= bookmark.movie.title %></h2>
+      <%= link_to bookmark.movie.title, movie_path(bookmark.movie), class:"text-decoration-none" %>
       <p><%= bookmark.comment %></p>
     </div>
     <%= link_to bookmark_path(bookmark), method: :delete, data: { confirm: 'Confirm to remove from the list?' }, class: "remove-link col-4 text-end" do %>

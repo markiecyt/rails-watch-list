@@ -1,0 +1,20 @@
+<div class="container pt-5">
+  <div class="movie-page d-flex mt-5 py-5">
+    <img src="<%= @movie.poster_url %>" alt="Movie image" class="movie-image d-flex">
+    <div class="w-100 ms-5">
+      <div class="position-fixed pe-5">
+        <h2>
+          <%= @movie.title %>
+          <span>(<%= @movie.rating %>/10)</span>
+        </h2>
+        <p><%= @movie.overview %></p>
+        <div class="cards">
+          <% @movie.lists.each do |list| %>
+            <%= render partial: "lists/card", locals: {list: list} %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

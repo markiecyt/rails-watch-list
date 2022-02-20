@@ -1,12 +1,7 @@
-<div class="offset-3 col-6 my-4 justify-content-center">
-  <div class="movie-card shadow" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url(<%= bookmark.movie.poster_url %>)">
-    <%= link_to bookmark_path(bookmark), method: :delete, data: { confirm: 'Confirm to remove from the list?' }, class: "remove-link" do %>
-      <i class="fas fa-trash-alt"></i>
-    <% end %>
-    <div class="flex justify-content-center align-middle text-center">
-      <h2><%= bookmark.movie.title %> <span>(<%= bookmark.movie.rating %>/10)</span> </h2>
-      <p class="movie-description"><%= bookmark.movie.overview %></p>
-      <p></p>
-    </div>
+<%= link_to movie_path(movie) do %>
+<div class="movie-card justify-content-center p-2 me-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url(<%= movie.poster_url %>)">
+  <div class="d-flex align-items-center text-center">
+    <h2><%= movie.title %></h2>
   </div>
 </div>
+<% end %>

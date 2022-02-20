@@ -1,0 +1,28 @@
+// Place all the styles related to the movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.movie-image{
+  object-fit: cover;
+}
+
+h2 {
+  span {
+    font-size: 16px;
+    color: rgb(183, 179, 179);
+  }
+}
+
+.movie-page {
+  .card {
+    height: 80px
+  }
+}
+
+.movies-list {
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+  a {
+    text-decoration: none;
+  }
+}
