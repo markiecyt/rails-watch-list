@@ -4,11 +4,18 @@
   </div>
 </div>
 
-<div class="container p-5">
-  <div class="row p-2 gx-4">
-    <% @list.bookmarks.each do |bookmark|%>
-      <%= render partial: "movies/card", locals: { bookmark: bookmark} %>
-    <% end %>
-  </div>
-  <%= link_to 'Bookmark a movie', new_list_bookmark_path(@list), class: 'btn btn-info'  %>
+<div class="container-fluid py-5 px-2">
+    <div class="d-flex flex-column-reverse flex-sm-row">
+      <div class="col-10 offset-1 col-sm-8 offset-sm-2">
+       <% @list.bookmarks.each do |bookmark|%>
+        <%= render partial: "bookmarks/card", locals: { bookmark: bookmark} %>
+      <% end %>
+      </div>
+      <div class="col-10 offset-1 col-sm-2 offset-sm-0 text-center text-sm-start mt-4 ms-sm-3">
+        <%= link_to 'Bookmark a movie', new_list_bookmark_path(@list), class: 'btn btn-info mx-auto p-2 add-bookmark-btn'  %>
+      </div>
+
+    </div>
+
+    </div>
 </div>
